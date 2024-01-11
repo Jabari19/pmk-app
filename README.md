@@ -1,8 +1,10 @@
 # pmk-app
 
-make it github
+save it github
+arrays
+defination and answer
 create initial react app
 push to github
-Rename project24 to projectm study app
+create pmk study app
 design my PMK s/w deck game of flashcards
 
