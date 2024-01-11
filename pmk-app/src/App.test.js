@@ -1,8 +1,19 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+import QuizDeck from './QuizDeck';
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        {Trying to see how it works!!!}
+      </header>
+      <main>
+        <QuizDeck />
+      </main>
+    </div>
+  );
+}
+
+export default App;
