@@ -1,5 +1,7 @@
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import CardDeck from './CardDeck';
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
           PMK study guide
         </p>
+
+        <CardDeck />
 
         <a
           className="App-link"

@@ -10,7 +10,15 @@ const QuizDeck = () => {
     { id: 3, question: 'What are the 4 basics of project management?', answer: 'four key elements of project management: scope, time, cost, and quality. By managing these elements effectively, you can ensure that your project is completed on time, within budget, and to the required quality standards.' },
     { id: 4, question: 'During ________, actual project work is rapidly undertaken by the team.', answer: 'Performing' },
     { id: 5, question: 'Motivation refers to an individual’s ________ of effort toward attaining a goal.', answer: '. intensity, direction, and persistence ' },
-    { id: 6, question: 'Maslow’s hierarchy of needs has the following order (from lowest to highest level needs):', answer: 'physiological, safety, social, esteem, self-actualization.' },
+    { id: 7, question: 'Maslow’s hierarchy of needs has the following order (from lowest to highest level needs:', answer: 'physiological, safety, social, esteem, self-actualization.' },
+    { id: 8, question: 'A communication management plan should include:', answer:'how project information is stored, retrieved, and discarded at the end of the project.'},
+    { id: 9, question: 'Memos, reports, and letters are examples of:', answer: 'written communication.'},
+    { id: 10, question:'Performance reports focusing on current information about the project are called:', answer:'progress reports.'},
+    { id: 11, question: 'Which of the following is an activity to be performed after a meeting?', answer:'review and professionally prepare the minutes'},
+    { id: 12, question: 'Which of the following is considered an asynchronous communication method?', answer:'electronic mail'},
+    { id: 13, question: 'When using synchronous communication, all parties involved are present:', answer:' at the same time but not necessarily at the same place.'},
+    { id: 14, question: 'The collection of stages that make up the life of a product. These stages are typically introduction, growth, maturity and retirement.', answer:'Product Life Cycle'},
+    { id: 15, question:'The collection of tools, methodologies, techniques, standards and resources used to manage a project. These may be formal systems and strategies determined by the organization or informal methods utilized by project managers.', answer:'Project Management Information Systems (PMIS)'},
     // Adding more quizzes as needed
   ]);
 
