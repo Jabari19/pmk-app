@@ -3,7 +3,7 @@ import "./App.css";
 import CardBox from "./CardBox";
 
 function App() {
-  c([
+  const [cards, setCards] = useState([
     {
       id: 1,
       question: "What is agile project management?",
@@ -42,7 +42,7 @@ function App() {
 
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
-  onst [cards, setCards] = useState
+  const [score, setScore] = useState(0);
 
   const handleNextCard = () => {
     setCurrentCardIndex((prevIndex) => (prevIndex + 1) % cards.length);
@@ -58,11 +58,15 @@ function App() {
 
   const handleSelectAnswer = (selectedOption) => {
     setSelectedAnswer(selectedOption);
+    //updating the score
+    if(selectedOption===cards[currentCardIndex].answer){setScore((prevScore)=>prevScore + 1);
+    }
   };
 
   const isAnswerCorrect = () => {
     return selectedAnswer === cards[currentCardIndex].answer;
   };
+  
 
   return (
     <div className="quiz-deck">
@@ -87,6 +91,8 @@ function App() {
           Your answer is {isAnswerCorrect() ? "correct" : "incorrect"}.
         </p>
       )}
+      <h1>Scores: {score}</h1> 
+
     </div>
   );
 }

@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -12,7 +13,7 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+/*project management*/
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -37,6 +38,7 @@
   }
 }
 
+
 .quiz-deck {
   display: flex;
   flex-direction: column;
@@ -44,6 +46,7 @@
   justify-content: center;
   height: 100vh;
 }
+/*CARDBOX*/
 
 .card-box {
   margin-bottom: 20px;

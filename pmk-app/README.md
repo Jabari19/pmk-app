@@ -1,4 +1,14 @@
 ,
+create a multple choice quiz
+refactor my code
+commit to git hub
+.....try to add more questions
+try to create a reshuffle button
+
+
+
+
+
     {
       id: 2,
       question: "What are the four key principles of Agile?",
