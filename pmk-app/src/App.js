@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import CardBox from "./CardBox";
 
 function App() {
-  const [cards, setCards] = useState([
+  const [cards] = useState([
     {
       id: 1,
       question: "What is agile project management?",
@@ -37,20 +37,34 @@ function App() {
       ],
       answer: "Initiating, Planning, Executing, Monitoring & Controlling, and Closing",
     },
-    
+
   ]);
 
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [score, setScore] = useState(0);
-  
+  const [timer, setTimer] = useState(10); // Set initial timer value in seconds
 
   const totalQuestions = cards.length;
   const scorePercentage = (score / totalQuestions) * 100;
 
+  useEffect(() => {
+    let countdown;
+    if (timer > 0) {
+      countdown = setTimeout(() => {
+        setTimer(timer - 1);
+      }, 1000);
+    } else if (timer === 0) {
+      handleNextCard(); // Automatically move to the next card when time is up
+    }
+    return () => clearTimeout(countdown);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [timer]);
+
   const handleNextCard = () => {
     setCurrentCardIndex((prevIndex) => (prevIndex + 1) % cards.length);
     setSelectedAnswer(null); // Reset selected answer when moving to the next card
+    setTimer(10); // Reset timer for the next question
   };
 
   const handlePrevCard = () => {
@@ -58,25 +72,25 @@ function App() {
       (prevIndex) => (prevIndex - 1 + cards.length) % cards.length
     );
     setSelectedAnswer(null); // Reset selected answer when moving to the previous card
+    setTimer(10); // Reset timer for the previous question
   };
 
   const handleSelectAnswer = (selectedOption) => {
     setSelectedAnswer(selectedOption);
     //updating the score
-
-    if(selectedOption===cards[currentCardIndex].answer){ 
-      setScore((prevScore)=>prevScore + 1);
+    if (selectedOption === cards[currentCardIndex].answer) {
+      setScore((prevScore) => prevScore + 1);
     }
   };
 
   const isAnswerCorrect = () => {
     return selectedAnswer === cards[currentCardIndex].answer;
   };
-  
 
   return (
     <div className="quiz-deck">
       <h1>PROJECT MANAG'T STUDY QUIZ</h1>
+      <div className="timer">Time Remaining: {timer} seconds</div>
       {cards.length > 0 && (
         <CardBox
           question={cards[currentCardIndex].question}
@@ -97,9 +111,9 @@ function App() {
           Your answer is {isAnswerCorrect() ? "correct" : "incorrect"}.
         </p>
       )}
-      <h1>Scores: {score}</h1> 
+      {timer === 0 && <p>Time's up!</p>}
+      <h1>Scores: {score}</h1>
       <h2>Score Percentage: {scorePercentage.toFixed(2)}%</h2>
-
     </div>
   );
 }
