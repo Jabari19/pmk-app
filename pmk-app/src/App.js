@@ -43,6 +43,10 @@ function App() {
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [score, setScore] = useState(0);
+  
+
+  const totalQuestions = cards.length;
+  const scorePercentage = (score / totalQuestions) * 100;
 
   const handleNextCard = () => {
     setCurrentCardIndex((prevIndex) => (prevIndex + 1) % cards.length);
@@ -59,7 +63,9 @@ function App() {
   const handleSelectAnswer = (selectedOption) => {
     setSelectedAnswer(selectedOption);
     //updating the score
-    if(selectedOption===cards[currentCardIndex].answer){setScore((prevScore)=>prevScore + 1);
+
+    if(selectedOption===cards[currentCardIndex].answer){ 
+      setScore((prevScore)=>prevScore + 1);
     }
   };
 
@@ -92,6 +98,7 @@ function App() {
         </p>
       )}
       <h1>Scores: {score}</h1> 
+      <h2>Score Percentage: {scorePercentage.toFixed(2)}%</h2>
 
     </div>
   );

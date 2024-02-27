@@ -4,6 +4,8 @@ refactor my code
 commit to git hub
 .....try to add more questions
 try to create a reshuffle button
+score tracking
+grade based on correct answer
 
 
 
