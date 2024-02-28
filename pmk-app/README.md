@@ -11,6 +11,45 @@ grade based on correct answer
 
 
 
+
+{
+      id: 1,
+      question: "What is agile project management?",
+      options: [
+        "A management approach for manufacturing projects",
+        "An iterative approach to managing software development projects",
+        "A waterfall model for project management",
+      ],
+      answer: "An iterative approach to managing software development projects",
+    },
+    {
+      id: 2,
+      question: "What are the four key principles of Agile?",
+      options: [
+        "Individuals and interactions over processes and tools.",
+        "Working software over comprehensive documentation.",
+        "Customer collaboration over contract negotiation.",
+        "Responding to change over following a plan.",
+        "All the above",
+      ],
+      answer: "All the above",
+    },
+    {
+      id: 3,
+      question: "What are the Five Project Management Process Groups in order?",
+      options: [
+        "Initiating, Planning, Monitoring & Controlling, Executing, and Closing",
+        "Initiating, Monitoring & controlling, Planning, Executing, and Closing",
+        "Initiating, Executing, Planning, Monitoring & Controlling, and Closing",
+        "Initiating, Planning, Executing, Monitoring & Controlling, and Closing",
+      ],
+      answer: "Initiating, Planning, Executing, Monitoring & Controlling, and Closing",
+    },
+
+
+
+
+
     {
       id: 2,
       question: "What are the four key principles of Agile?",

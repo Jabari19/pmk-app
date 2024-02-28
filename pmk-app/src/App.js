@@ -37,6 +37,19 @@ function App() {
       ],
       answer: "Initiating, Planning, Executing, Monitoring & Controlling, and Closing",
     },
+    {
+      id: 4,
+      question:"The association designed to bring together project management professionals and systematically capture project management knowledge is called:?",
+      options:[
+      "The Knowledge Association",
+      "Project Management Professionals Association",
+      "Project Management Institute",
+      "Project Managers Institute",
+
+      ],
+      answer: "Project Management Institute",
+
+    },
 
   ]);
 
@@ -62,16 +75,16 @@ function App() {
   }, [timer]);
 
   const handleNextCard = () => {
-    setCurrentCardIndex((prevIndex) => (prevIndex + 1) % cards.length);
+    setCurrentCardIndex((prevIndex) => (prevIndex + 1) % totalQuestions);
     setSelectedAnswer(null); // Reset selected answer when moving to the next card
     setTimer(10); // Reset timer for the next question
   };
 
   const handlePrevCard = () => {
     setCurrentCardIndex(
-      (prevIndex) => (prevIndex - 1 + cards.length) % cards.length
+      (prevIndex) => (prevIndex - 1 + totalQuestions) % totalQuestions
     );
-    setSelectedAnswer(null); // Reset selected answer when moving to the previous card
+    setSelectedAnswer(null); // Reset selected answer,then moving to the previous card
     setTimer(10); // Reset timer for the previous question
   };
 
@@ -98,22 +111,26 @@ function App() {
           onSelect={handleSelectAnswer}
         />
       )}
-      <div className="navigation">
-        <button onClick={handlePrevCard} disabled={cards.length <= 1}>
-          Previous Quiz
-        </button>
-        <button onClick={handleNextCard} disabled={cards.length <= 1}>
-          Next Quiz
-        </button>
-      </div>
       {selectedAnswer !== null && (
         <p>
           Your answer is {isAnswerCorrect() ? "correct" : "incorrect"}.
         </p>
       )}
       {timer === 0 && <p>Time's up!</p>}
+
+      
       <h1>Scores: {score}</h1>
       <h2>Score Percentage: {scorePercentage.toFixed(2)}%</h2>
+      {(totalQuestions !== 4 || scorePercentage !== 100) && (
+        <div className="navigation">
+          <button onClick={handlePrevCard} disabled={totalQuestions <= 1}>
+            Previous Quiz
+          </button>
+          <button onClick={handleNextCard} disabled={totalQuestions <= 1}>
+            Next Quiz
+          </button>
+        </div>
+      )}
     </div>
   );
 }
